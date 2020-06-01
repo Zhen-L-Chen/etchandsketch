@@ -14,18 +14,7 @@ function initDiv(num){
     } 
 }
 
-//list of div class
-function classArray(square){
-    let classArray = [];
-    let squared = square ** 2;
-    for(let i = 0; i < squared; i++){
-        classArray.push(`divInit${i}`);
-    }
-    return classArray;
-}
-
 // initiate the Template
-
 function initTemplate(square){
     gridiv.style.gridTemplateColumns = `repeat(${square}, 20px)`;
     gridiv.style.gridTemplateRows = `repeat(${square}, 20px)`;  
@@ -41,6 +30,26 @@ function initTemplate(square){
     })
 };
 
-console.log(initTemplate(16));
+// clear the etch 
+function clear(){
+    gridLength = gridiv.children.length;
+    for(let i = 0; i < gridLength; i++){
+        gridiv.children[i].style.backgroundColor = "blue";
+    }
+}
+
+let btnClear = document.querySelector(".btnclear");
+btnClear.addEventListener("click", clear);
+
+let value = prompt("enter a number above 10");
+
+function main(){
+    initTemplate(value);
+}
+
+let btnPlay = document.querySelector(".btnplay");
+btnPlay.addEventListener("click", main)
+
+
 
 
