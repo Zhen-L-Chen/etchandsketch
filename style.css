@@ -2,7 +2,8 @@
     display: grid;
     grid-template-columns: repeat(1, 20px [col-start]);
     grid-template-rows: repeat(1, 20px [row-start]);
+};
 
-.bold{
-    font-weight: bold;
+.divInit232{
+    background-color: yellow;
 }
